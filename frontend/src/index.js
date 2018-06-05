@@ -1,11 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import Search from './components/Search';
+import React from "react";
+import ReactDOM from "react-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+import {Route} from "react-router-dom";
+import MainLayout from "./components/NewLevelTutor/MainLayout";
+import UserList from "./components/NewLevelTutor/UserList";
+import WidgetList from "./components/NewLevelTutor/WidgetList";
 
 ReactDOM.render(
-    <div>
-    <Search/>
-    <App />
-    </div>,
-     document.getElementById('root'));
+    <Router>
+        <MainLayout>
+            <Route path = "/users" component = { UserList }/>
+            <Route path = "/widgets" component = { WidgetList }/>
+        </MainLayout>
+    </Router>,
+    
+    document.getElementById("root"));
